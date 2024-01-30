@@ -3,7 +3,7 @@
 // in the html.
 $(document).ready(function () {
 
-  var currentDay = dayjs().format('MM, DD, YYYY');
+  var currentDay = dayjs().format('MMM / DD / YYYY');
 
   console.log(currentDay);
 
@@ -36,10 +36,11 @@ $(document).ready(function () {
     });
   }
 
+ 
   function savedTasks(){
     $('.time-block').each( function (){
       var timeBlock = $(this).attr('id');
-      $(this).child('.description').val() = localStorage.getItem(timeBlock)});
+      $(this).children('.description').val(localStorage.getItem(timeBlock))});
   }
     
   timeNow();
